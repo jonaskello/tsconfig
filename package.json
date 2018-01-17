@@ -5,12 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node -r tsconfig-paths/register ./dist/config/server.js"
+    "build": "tsc && cp tsconfig.json ./dist",
+    "start": "cd dist && node -r tsconfig-paths/register ./src/config/server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "tsconfig-paths": "^3.1.1"
+  },
+  "dependencies": {
+    "@types/node": "^9.3.0"
   }
 }
